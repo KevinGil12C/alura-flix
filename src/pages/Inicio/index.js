@@ -1,5 +1,8 @@
 import Banner from "../../components/Banner"
 import Cabecera from "../../components/Cabecera"
+import Footer from "../../components/Footer"
+
+import Galeria from "../../components/Galeria"
 import styles from "./Inicio.module.css"
 
 function Inicio() {
@@ -7,6 +10,10 @@ function Inicio() {
     <>
         <Cabecera></Cabecera>
         <Banner></Banner>
+        <Galeria>
+            
+        </Galeria>
+        <Footer></Footer>
     </>
 )
 }

@@ -1,0 +1,12 @@
+.container{
+    background-color: var(--negro);
+    padding: 0 30px;
+}
+
+.cardContainer{
+    display: flex;
+    overflow: auto;
+    justify-content: space-between;
+    padding: 40px 0;
+    gap: 30px;
+}
