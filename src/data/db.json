@@ -5,7 +5,7 @@
         "enlace":"https://www.youtube.com/watch?v=PztCEdIJITY&t=6s",
         "categoria":{
             "nombre":"frontend",
-            "color":""
+            "color":"#6BD1FF"
         }
     },
     {
@@ -13,8 +13,8 @@
         "title":"¿Qué es JavaScript?",
         "enlace":"https://www.youtube.com/watch?v=GJfOSoaXk4s",
         "categoria":{
-            "nombre":"",
-            "color":""
+           "nombre":"frontend",
+            "color":"#6BD1FF"
         }
     },
     {
@@ -22,8 +22,8 @@
         "title":"💛Curso de desarrollo frontend desde cero",
         "enlace":"https://www.youtube.com/watch?v=Aikuakl3i8A",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"frontend",
+            "color":"#6BD1FF"
         }
     },
     {
@@ -31,8 +31,8 @@
         "title":"¡Domina CSS Flexbox con FlexboxFroggy! Aprende jugando en este desafío divertido",
         "enlace":"https://www.youtube.com/watch?v=MXPhyN5t0uQ",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"frontend",
+            "color":"#6BD1FF"
         }
     },
     {
@@ -40,8 +40,8 @@
         "title":"¿Por qué utilizar React?",
         "enlace":"https://www.youtube.com/watch?v=MnBNPA45NW8",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"frontend",
+            "color":"#6BD1FF"
         }
     },
     {
@@ -49,8 +49,8 @@
         "title":"Explorando el poder del Back-End en el Desarrollo Web",
         "enlace":"https://www.youtube.com/watch?v=Z024LSCMqFk",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"backend",
+            "color":"#00C86F"
         }
     },
     {
@@ -58,8 +58,8 @@
         "title":"https://www.youtube.com/watch?v=t-iqt1b2qqk",
         "enlace":"https://www.youtube.com/watch?v=t-iqt1b2qqk",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"backend",
+            "color":"#00C86F"
         }
     },
     {
@@ -67,8 +67,8 @@
         "title":"¿Por qué utilizar Java actualmente?",
         "enlace":"https://www.youtube.com/watch?v=3kNuK-XAHEY",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"backend",
+            "color":"#00C86F"
         }
     },
     {
@@ -76,8 +76,8 @@
         "title":"La magia detrás de Java #aluramás",
         "enlace":"https://www.youtube.com/watch?v=GrEO8nZzyZM",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"backend",
+            "color":"#00C86F"
         }
     },
     {
@@ -85,8 +85,8 @@
         "title":"Simplificando tu código en Java: Conoce los enum #AluraMás",
         "enlace":"https://www.youtube.com/watch?v=EoPvlE85XAQ",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"backend",
+            "color":"#00C86F"
         }
     },
     {
@@ -94,8 +94,8 @@
         "title":"¿Qué son las Soft Skills?",
         "enlace":"https://www.youtube.com/watch?v=vhwspfvI52k",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"inovaccion",
+            "color":"FFBA05"
         }
     },
     {
@@ -103,8 +103,8 @@
         "title":"7 Soft Skills más deseadas por las empresas #AluraMás",
         "enlace":"https://www.youtube.com/watch?v=YhR7Zp8NUzE",
         "categoria":{
-            "nombre":"",
-            "color":""
+           "nombre":"inovaccion",
+            "color":"FFBA05"
         }
     },
     {
@@ -112,8 +112,8 @@
         "title":"Conoce a Luri: Nuestra Inteligencia Artificial impulsada por ChatGPT",
         "enlace":"https://www.youtube.com/watch?v=cfvFBAB9TIE",
         "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"inovaccion",
+            "color":"FFBA05"
         }
     },
     {
@@ -121,26 +121,9 @@
         "title":"Explorando #SheetGPT: Revelando su Funcionalidad y Aplicaciones",
         "enlace":"https://www.youtube.com/watch?v=0kkeYthTGr0",
         "categoria":{
-            "nombre":"",
-            "color":""
-        }
-    },
-    {
-        "id":"15",
-        "title":"",
-        "enlace":"",
-        "categoria":{
-            "nombre":"",
-            "color":""
-        }
-    },
-    {
-        "id":"16",
-        "title":"",
-        "enlace":"",
-        "categoria":{
-            "nombre":"",
-            "color":""
+            "nombre":"inovaccion",
+            "color":"FFBA05"
         }
     }
+    
 ]
