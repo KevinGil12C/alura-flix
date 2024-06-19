@@ -1,18 +1,23 @@
-
-.container {
+.container{
     width: 100%;
     max-width: 550px;
     min-width: 550px;
     height: 100%;
-    max-height: 280px;
-    min-height: 280px;
+    max-height: 380px;
+    min-height: 380px;
+    border: 3px solid var(--azul);
+    border-radius: 15px;
+}
+.cardContainer {
+    width: 550px;
+    height: 295px;
     position: relative; 
     border: 3px solid var(--azul);
     border-radius: 15px;
     overflow: hidden;
 }
 
-.container::before {
+.cardContainer::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -24,12 +29,4 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
-}
-
-.container:hover{
-    width: 100%;
-    height: 100%;
-    min-width: 650px;
-    min-height: 320px;
-    transition: all 2s ease;
 }

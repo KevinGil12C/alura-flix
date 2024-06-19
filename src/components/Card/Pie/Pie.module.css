@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--pie);
+    height: auto;
+    border-radius: 15px;
+}
+
+.delete,
+.actualizar{
+    display: flex;
+    align-items: center;
+}
+
+.delete,
+.actualizar img {
+    margin-right: 10px;
+}

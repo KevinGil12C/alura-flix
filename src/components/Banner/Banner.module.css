@@ -34,3 +34,16 @@
     font-size: 18px;
 }
 
+.video{
+    width: 100%;
+    max-width: 550px;
+    min-width: 550px;
+    height: 100%;
+    max-height: 380px;
+    min-height: 380px;
+    border: 3px solid var(--azul);
+    border-radius: 15px;
+}
+iframe{
+    border-radius: 15px;
+}
