@@ -7,7 +7,7 @@ function Galeria() {
     return (
         <>
             <div className={styles.container}>
-                <Titulo>Front end</Titulo>
+                <Titulo>Que ing3 su mxer el hiram</Titulo>
                 <div className={styles.cardContainer}>
                     <Card></Card>
                     <Card></Card>
