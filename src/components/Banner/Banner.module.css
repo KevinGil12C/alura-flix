@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    width: 100% - 80px;
+    height: 100dvh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-image: linear-gradient(236deg, rgb(0 0 16) 21%, rgb(0 0 0) 57%);
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    transition: all 2s ease;
+    padding: 0 40px;
+    color: var(--blanco);
+    gap: 50px;
+    @media (max-width: 800px) {
+        height: auto;
+        min-height: 40vh;
+    }
+}
+
+.hero {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero h1 {
+    font-size: 46px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
