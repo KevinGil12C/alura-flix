@@ -5,7 +5,9 @@ import Titulo from "../Titulo";
 import styles from "./Galeria.module.css";
 
 function Galeria() {
-    const [videos, setVideos] = useState([])
+    const [videos, setVideos] = useState([]);
+    const [categorias, setCategorias] = useState([]);
+
     useEffect(() => {
         fetch("https://alura-flix-api-seven.vercel.app/videos")
             .then((response) => response.json())
@@ -13,17 +15,35 @@ function Galeria() {
                 setVideos(data);
             });
     }, []);
+
+    useEffect(() => {
+        fetch("https://alura-flix-api-seven.vercel.app/categoria")
+            .then((response) => response.json())
+            .then((data) => {
+                setCategorias(data);
+            });
+    }, []);
+
     return (
-        <>
-            <div className={styles.container}>
-                <Titulo>Front end</Titulo>
-                <section className={styles.container}>
-                {videos.map((video) => {
-                    return (<Card {...video} key={video.id}> <Pie/></Card>)
-                })}
-            </section>
-            </div>
-        </>
+        <div className={styles.container}>
+            {categorias.map((cat) => {
+                const videosFiltrados = videos.filter(video => video.categoria.nombre === cat.nombre);
+                return (
+                    <div key={cat.id} className={styles.categorySection}>
+                        <Titulo {...cat} key={cat.nombre}>{cat.nombre}</Titulo>
+                        <div className={styles.videoContainer}>
+                            {videosFiltrados.length > 0 ? (
+                                videosFiltrados.map((video) => (
+                                    <Card {...video} key={video.id}> <Pie /></Card>
+                                ))
+                            ) : (
+                                <p>No hay videos en esta categoría</p>
+                            )}
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
     );
 }
 

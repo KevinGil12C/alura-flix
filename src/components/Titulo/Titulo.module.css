@@ -4,8 +4,8 @@
     align-items: center;
     font-size: 32px;
     width: 296px;
-    height: 92px;
-    background-color: var(--frontend);
+    height: 70px;
+    background-color: var(--back-color);
     border-radius: 15px;
     text-transform: uppercase;
     font-weight: 600;

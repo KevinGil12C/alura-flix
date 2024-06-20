@@ -1,12 +1,23 @@
-.container{
+.container {
     background-color: var(--negro);
     padding: 0 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-.cardContainer{
+.categorySection {
+    padding: 40px 0;
+    overflow-y: auto;
+}
+
+.titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.videoContainer {
     display: flex;
-    overflow: auto;
-    justify-content: space-between;
+    flex-direction: row;
     padding: 40px 0;
     gap: 30px;
 }

@@ -1,4 +1,6 @@
 .container {
+    width: 430px;
+    height: 59px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,13 +9,16 @@
     align-items: center;
     background-color: var(--pie);
     height: auto;
-    border-radius: 15px;
+    border-top: 4px solid var(--border-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .delete,
 .actualizar{
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .delete,

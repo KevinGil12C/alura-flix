@@ -1,32 +1,12 @@
 .container{
-    width: 100%;
-    max-width: 550px;
-    min-width: 550px;
-    height: 100%;
-    max-height: 380px;
-    min-height: 380px;
-    border: 3px solid var(--azul);
+    width: 430px;
+    height: 332px;
+    border: 4px solid var(--border-color);
     border-radius: 15px;
 }
-.cardContainer {
-    width: 550px;
-    height: 295px;
-    position: relative; 
-    border: 3px solid var(--azul);
-    border-radius: 15px;
-    overflow: hidden;
-}
 
-.cardContainer::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-shadow: inset 0 0 70px var(--azul);
-}
-
-.container img {
-    width: 100%;
-    height: 100%;
+.cardContainer img{
+    width: 430px;
+    height: 245px;
     border-radius: 15px;
 }
