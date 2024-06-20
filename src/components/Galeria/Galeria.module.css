@@ -1,13 +1,14 @@
 .container {
     background-color: var(--negro);
     padding: 0 30px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
 
 .categorySection {
     padding: 40px 0;
-    overflow-y: auto;
+    
 }
 
 .titulo {
@@ -17,7 +18,54 @@
 
 .videoContainer {
     display: flex;
-    flex-direction: row;
-    padding: 40px 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  scroll-snap-type: x mandatory;
     gap: 30px;
+    padding-bottom: 10px;
+    padding: 40px 0 0 0;
 }
+
+.snapItem {
+    scroll-snap-align: start; 
+    border: none;
+}
+
+.cardContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+  /* Estiliza el scrollbar */
+  div::-webkit-scrollbar {
+    width: 10px; /* Ancho del scrollbar vertical */
+    height: 10px; /* Ancho del scrollbar horizontal */
+  }
+  
+  /* Estiliza la pista del scrollbar (el fondo) */
+  div::-webkit-scrollbar-track {
+    background: #000; /* Color de fondo del scrollbar */
+  }
+  
+  /* Estiliza el deslizador del scrollbar (la parte que se mueve) */
+  div::-webkit-scrollbar-thumb {
+    background: #00f; /* Color del deslizador */
+    border-radius: 6px; /* Opcional: redondea las esquinas del deslizador */
+  }
+  
+  /* Estiliza el deslizador cuando el usuario lo está activamente usando */
+  div::-webkit-scrollbar-thumb:hover {
+    background: #007bff; /* Color del deslizador cuando está en hover */
+  }
+  
+  /* Opcional: Estiliza los botones del scrollbar (en los extremos, en caso de tener) */
+  div::-webkit-scrollbar-button {
+    background: #000; /* Color de los botones */
+  }
+  
+  /* Opcional: Estiliza la esquina del scrollbar (donde se encuentran los scrollbars vertical y horizontal) */
+  div::-webkit-scrollbar-corner {
+    background: #000; /* Color de la esquina del scrollbar */
+  }
+  

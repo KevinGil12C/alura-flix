@@ -34,7 +34,9 @@ function Galeria() {
                         <div className={styles.videoContainer}>
                             {videosFiltrados.length > 0 ? (
                                 videosFiltrados.map((video) => (
-                                    <Card {...video} key={video.id}> <Pie /></Card>
+                                    <div className={styles.snapItem} key={video.id}>
+                                        <Card {...video}> <Pie /></Card>
+                                    </div>
                                 ))
                             ) : (
                                 <p>No hay videos en esta categoría</p>
