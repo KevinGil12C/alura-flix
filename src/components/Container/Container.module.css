@@ -1,0 +1,6 @@
+.container {
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 0.4em;
+  }
