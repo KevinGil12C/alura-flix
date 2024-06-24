@@ -1,0 +1,26 @@
+.listaOpciones {
+    margin: 24px 0;
+    font-family: "Montserrat", sans-serif;
+    flex: 1;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--blanco);
+    margin-bottom: 8px;
+    display: block;
+    width: 100%; /* Asegura que el label ocupe el 100% del ancho */
+}
+
+.select {
+    width: 100%;
+    background-color: var(--negro);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 30px 15px;
+    outline-color: var(--frontend);
+    font-size: 16px;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    color: var(--blanco);
+}

@@ -16,7 +16,7 @@ function Cabecera() {
                 <CabeceraLink url="./"> 
                     <Boton className={styles.botonHome}>HOME</Boton>
                 </CabeceraLink>
-                <CabeceraLink url="./nuevovideo">
+                <CabeceraLink url="./nuevo_video">
                     <Boton className={styles.botonNuevoVideo}>NUEVO VIDEO</Boton>
                 </CabeceraLink>
             </nav>

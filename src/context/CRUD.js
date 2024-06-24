@@ -1,12 +1,45 @@
-import { createContext, useContext, useState } from "react";
+import { useContext } from "react";
+import { VideosContext } from "./VideosProvider.js";
 
-export const VideosContext = createContext()
+export function useVideosContext() {
+    const context = useContext(VideosContext);
+    if (!context) {
+        throw new Error("useVideosContext must be used within a VideosProvider");
+    }
 
-export default function VideosProvider({children}){
+    const { videos, setVideos, categorias, setCategorias, formulario, setFormulario } = context;
 
-}
-export function useVideosContext(){
-    const {video, setVideo} = useContext(VideosContext)
-    const {categoria, setCategoria} = useContext(VideosContext)
+    const agregar = (nuevoVideo) => {
+        fetch("http://localhost:3001/videos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(nuevoVideo),
+        })
+        .then(response => response.json())
+        .then(data => {
+            setVideos([...videos, data]);
+            setFormulario({
+                title: "",
+                categoria: "",
+                capa: "",
+                enlace: "",
+                descripcion: ""
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    };
 
+    return {
+        videos,
+        setVideos,
+        categorias,
+        setCategorias,
+        formulario,
+        setFormulario,
+        agregar
+    };
 }

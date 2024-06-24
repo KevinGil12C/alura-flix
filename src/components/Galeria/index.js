@@ -9,7 +9,7 @@ function Galeria() {
     const [categorias, setCategorias] = useState([]);
 
     useEffect(() => {
-        fetch("https://alura-flix-api-seven.vercel.app/videos")
+        fetch("http://localhost:3001/videos")
             .then((response) => response.json())
             .then((data) => {
                 setVideos(data);
@@ -17,7 +17,7 @@ function Galeria() {
     }, []);
 
     useEffect(() => {
-        fetch("https://alura-flix-api-seven.vercel.app/categoria")
+        fetch("http://localhost:3001/categoria")
             .then((response) => response.json())
             .then((data) => {
                 setCategorias(data);
@@ -27,7 +27,7 @@ function Galeria() {
     return (
         <div className={styles.container}>
             {categorias.map((cat) => {
-                const videosFiltrados = videos.filter(video => video.categoria.nombre === cat.nombre);
+                const videosFiltrados = videos.filter(video => video.categoria === cat.nombre);
                 return (
                     <div key={cat.id} className={styles.categorySection}>
                         <Titulo {...cat} key={cat.nombre}>{cat.nombre}</Titulo>

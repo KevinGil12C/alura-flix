@@ -1,0 +1,44 @@
+.campo {
+    margin: 24px 0;
+    font-family: "Montserrat", sans-serif;
+    flex: 1; /* Hace que cada campo ocupe el mismo ancho */
+}
+
+.campo label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+label {
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 100%;
+}
+
+label span {
+    margin-bottom: 15px; /* Añade este margen para crear espacio entre el span y el input */
+}
+
+
+.campo input {
+    width: calc(100% - 30px);
+    background-color: var(--negro);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 30px 15px;
+    outline-color: var(--frontend);
+    font-size: 16px;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    color: var(--blanco);
+
+}
+.campo-color input {
+    height: 40px;
+    padding: 5px 20px;
+}
