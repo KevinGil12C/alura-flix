@@ -1,14 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import styles from './ModalUpdate.module.css';
 import Campo from '../Campo';
 import ListaOpciones from '../ListaOpciones';
 import { useVideosContext } from '../../context/CRUD';
+import cerrar from "./cerrar.png";
 
 Modal.setAppElement('#root'); // Asegúrate de que este ID coincida con el elemento de tu aplicación principal
 
-function ModalUpdate({ modalIsOpen, cerrarModal, handleUpdate, video }) {
-    const { categorias, setCategorias, formulario, setFormulario, agregar } = useVideosContext();
+function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
+    const { categorias, setCategorias, actualizar } = useVideosContext();
+    const [formulario, setFormulario] = useState({
+        title: '',
+        categoria: '',
+        capa: '',
+        enlace: '',
+        descripcion: ''
+    });
 
     useEffect(() => {
         fetch("http://localhost:3001/categoria")
@@ -20,13 +28,15 @@ function ModalUpdate({ modalIsOpen, cerrarModal, handleUpdate, video }) {
 
     useEffect(() => {
         if (video) {
-            // Si hay video, inicializa el formulario con los datos del video
             setFormulario({
-                ...formulario,
-                categoria: video.categoria  // Inicializa la categoría con video.categoria
+                title: video.title,
+                categoria: video.categoria,
+                capa: video.capa,
+                enlace: video.enlace,
+                descripcion: video.descripcion
             });
         }
-    }, [video, setFormulario]);
+    }, [video]);
 
     const manejarCambio = (campo, valor) => {
         setFormulario({
@@ -37,7 +47,19 @@ function ModalUpdate({ modalIsOpen, cerrarModal, handleUpdate, video }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        agregar(formulario);
+        if (video && video.id) {
+            actualizar(video.id, formulario);
+        }
+    };
+
+    const handleClear = () => {
+        setFormulario({
+            title: '',
+            categoria: '',
+            capa: '',
+            enlace: '',
+            descripcion: ''
+        });
     };
 
     return (
@@ -48,62 +70,63 @@ function ModalUpdate({ modalIsOpen, cerrarModal, handleUpdate, video }) {
             className={styles.modal}
             overlayClassName={styles.overlay}
         >
-            <h2 className={styles.title}>Editar card:</h2>
-            <form onSubmit={handleUpdate}>
-                {/* Campo Título */}
-                {video && (
+            <img onClick={cerrarModal} className={styles.cerrar} src={cerrar} alt="Cerrar" />
+
+            <form onSubmit={handleSubmit}>
+                <div className={styles.formContainer}>
+                    <h2 className={styles.title}>Editar card:</h2>
                     <Campo
                         titulo="Título"
                         placeholder="Título del video"
                         required
-                        valor={video.title}
+                        valor={formulario.title}
                         setValor={(valor) => manejarCambio("title", valor)}
                     />
-                )}
 
-                {/* Lista de Opciones para Categoría */}
-                {categorias.length > 0 && (
-                    <ListaOpciones
-                        titulo="Categoría"
-                        valor={formulario.categoria}  // Usa formulario.categoria para reflejar el estado actual
-                        setValor={(valor) => manejarCambio("categoria", valor)}
-                        categorias={categorias}
-                    />
-                )}
+                    {categorias.length > 0 && (
+                        <ListaOpciones
+                            titulo="Categoría"
+                            valor={formulario.categoria}
+                            setValor={(valor) => manejarCambio("categoria", valor)}
+                            categorias={categorias}
+                        />
+                    )}
 
-                {/* Otros Campos */}
-                {video && (
                     <Campo
                         titulo="Imagen"
                         placeholder="Link de la imagen"
                         required
-                        valor={video.capa}
+                        valor={formulario.capa}
                         setValor={(valor) => manejarCambio("capa", valor)}
                     />
-                )}
 
-                {video && (
                     <Campo
                         titulo="Video"
                         placeholder="Ingrese el enlace del video"
                         required
-                        valor={video.enlace}
+                        valor={formulario.enlace}
                         setValor={(valor) => manejarCambio("enlace", valor)}
                     />
-                )}
 
-                {video && (
                     <Campo
                         titulo="Descripción"
                         placeholder="Descripción del video"
                         required
-                        valor={video.descripcion}
+                        valor={formulario.descripcion}
                         setValor={(valor) => manejarCambio("descripcion", valor)}
                     />
-                )}
 
-                <button type="submit">Actualizar</button>
-                <button type="button" onClick={cerrarModal}>Cancelar</button>
+                    <div className={styles.btnGroup}>
+                        <button className={styles.botonHome} type="submit">Guardar</button>
+                        <button
+                            className={styles.botonNuevoVideo}
+                            type="button"
+                            onClick={handleClear}
+                        >
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
             </form>
         </Modal>
     );
