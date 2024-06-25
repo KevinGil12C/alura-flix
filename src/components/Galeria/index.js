@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import Card from "../Card";
-import Pie from "../Card/Pie";
-import Titulo from "../Titulo";
-import styles from "./Galeria.module.css";
+import React, { useEffect, useState } from 'react';
+import Card from '../Card';
+import Pie from '../Card/Pie';
+import Titulo from '../Titulo';
+import styles from './Galeria.module.css';
 
 function Galeria() {
     const [videos, setVideos] = useState([]);
     const [categorias, setCategorias] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3001/videos")
+        fetch('http://localhost:3001/videos')
             .then((response) => response.json())
             .then((data) => {
                 setVideos(data);
@@ -17,7 +17,7 @@ function Galeria() {
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:3001/categoria")
+        fetch('http://localhost:3001/categoria')
             .then((response) => response.json())
             .then((data) => {
                 setCategorias(data);
@@ -27,15 +27,17 @@ function Galeria() {
     return (
         <div className={styles.container}>
             {categorias.map((cat) => {
-                const videosFiltrados = videos.filter(video => video.categoria === cat.nombre);
+                const videosFiltrados = videos.filter((video) => video.categoria === cat.nombre);
                 return (
                     <div key={cat.id} className={styles.categorySection}>
-                        <Titulo {...cat} key={cat.nombre}>{cat.nombre}</Titulo>
+                        <Titulo {...cat}>{cat.nombre}</Titulo>
                         <div className={styles.videoContainer}>
                             {videosFiltrados.length > 0 ? (
                                 videosFiltrados.map((video) => (
                                     <div className={styles.snapItem} key={video.id}>
-                                        <Card {...video}> <Pie /></Card>
+                                        <Card {...video} color={cat.color}>
+                                            <Pie video={video} key={video.id} />
+                                        </Card>
                                     </div>
                                 ))
                             ) : (
