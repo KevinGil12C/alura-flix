@@ -1,28 +1,50 @@
-import React, { useEffect, useState } from 'react';
+// Galeria.js
+import React, { useEffect } from 'react';
 import Card from '../Card';
 import Pie from '../Card/Pie';
 import Titulo from '../Titulo';
 import styles from './Galeria.module.css';
+import { useVideosContext } from '../../context/CRUD';
+
 
 function Galeria() {
-    const [videos, setVideos] = useState([]);
-    const [categorias, setCategorias] = useState([]);
+    const { videos, setVideos, categorias, setCategorias } = useVideosContext();
 
     useEffect(() => {
-        fetch('http://localhost:3001/videos')
-            .then((response) => response.json())
-            .then((data) => {
-                setVideos(data);
-            });
-    }, []);
+        const fetchVideos = async () => {
+            try {
+                const responseVideos = await fetch('http://localhost:3001/videos');
+                if (!responseVideos.ok) {
+                    throw new Error('Error al cargar los videos');
+                }
+                const dataVideos = await responseVideos.json();
+                setVideos(dataVideos); // Actualiza los videos en el contexto
+            } catch (error) {
+                console.error('Error al cargar los videos:', error);
+            }
+        };
 
-    useEffect(() => {
-        fetch('http://localhost:3001/categoria')
-            .then((response) => response.json())
-            .then((data) => {
-                setCategorias(data);
-            });
-    }, []);
+        const fetchCategorias = async () => {
+            try {
+                const responseCategorias = await fetch('http://localhost:3001/categoria');
+                if (!responseCategorias.ok) {
+                    throw new Error('Error al cargar las categorías');
+                }
+                const dataCategorias = await responseCategorias.json();
+                setCategorias(dataCategorias); // Actualiza las categorías en el contexto
+            } catch (error) {
+                console.error('Error al cargar las categorías:', error);
+            }
+        };
+
+        fetchVideos(); // Llama a la función fetchVideos al montar el componente
+        fetchCategorias(); // Llama a la función fetchCategorias al montar el componente
+
+        // Es buena práctica cancelar cualquier suscripción o limpieza en useEffect
+        return () => {
+            // Código de limpieza si es necesario
+        };
+    }, [setVideos, setCategorias]); // Dependencias: setVideos y setCategorias para actualizar cuando cambien
 
     return (
         <div className={styles.container}>

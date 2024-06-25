@@ -88,7 +88,7 @@ export function useVideosContext() {
                         confirmButtonText: 'Aceptar'
                     }).then(() => {
                         navigate("/");
-                        window.location.reload(); // Recarga la página
+                        
                     });
                 })
                 .catch(error => {
@@ -126,7 +126,7 @@ export function useVideosContext() {
                     confirmButtonText: 'Aceptar'
                 }).then(() => {
                     navigate("/");
-                    window.location.reload(); // Recarga la página
+                    
                 });
             }
         } catch (error) {

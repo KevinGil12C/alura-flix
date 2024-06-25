@@ -5,11 +5,14 @@ import Campo from '../Campo';
 import ListaOpciones from '../ListaOpciones';
 import { useVideosContext } from '../../context/CRUD';
 import cerrar from "./cerrar.png";
+import { useNavigate } from 'react-router-dom';
 
 Modal.setAppElement('#root'); // Asegúrate de que este ID coincida con el elemento de tu aplicación principal
 
 function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
     const { categorias, setCategorias, actualizar } = useVideosContext();
+    const navigate = useNavigate(); // Hook de react-router-dom para navegación programática
+
     const [formulario, setFormulario] = useState({
         title: '',
         categoria: '',
@@ -45,10 +48,12 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (video && video.id) {
-            actualizar(video.id, formulario);
+            await actualizar(video.id, formulario);
+            cerrarModal(); // Cierra el modal después de actualizar
+            navigate('/'); // Navega a la página principal sin recargar
         }
     };
 
