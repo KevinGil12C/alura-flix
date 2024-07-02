@@ -42,3 +42,8 @@ label span {
     height: 40px;
     padding: 5px 20px;
 }
+.error {
+    color: red; /* Cambia el color del texto del mensaje de error a rojo */
+    font-size: 16px;
+    margin-top: 5px;
+}
