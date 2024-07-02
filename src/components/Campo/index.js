@@ -9,7 +9,7 @@ const Campo = (props) => {
     };
 
     return (
-        <div className={styles.campo}>
+        <div className={styles.campo} >
             <label>
                 <span className={styles.text}>{props.titulo}</span>
                 <input 
@@ -18,7 +18,8 @@ const Campo = (props) => {
                     value={props.valor}
                     onChange={manejarCambio}
                     type={type}
-                />
+                    style={{ backgroundColor: `var(${props.color})`,border: `2px solid var(${props.border})` }}
+                    />
             </label>
         </div>
     );

@@ -19,7 +19,7 @@ a {
 nav {
     display: flex;
     gap: 10px;
-    /* Espacio entre los botones */
+
 }
 
 .botonHome {

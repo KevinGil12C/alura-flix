@@ -9,7 +9,7 @@ const ListaOpciones = (props) => {
         <div className={styles.listaOpciones}>
             <label className={styles.label}>
                 <span className={styles.text}>{props.titulo}</span>  
-                <select value={props.valor} onChange={manejarCambio} className={styles.select}>
+                <select value={props.valor} onChange={manejarCambio} className={styles.select} style={{ backgroundColor: `var(${props.color})`,border: `2px solid var(${props.border})`  }}>
                     <option value="" disabled defaultValue hidden>Seleccionar categoría</option>
                     {props.categorias.map((cat) => (
                         <option key={cat.id} value={cat.nombre}>{cat.nombre.toUpperCase()}</option>

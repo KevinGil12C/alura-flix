@@ -86,6 +86,8 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
                         required
                         valor={formulario.title}
                         setValor={(valor) => manejarCambio("title", valor)}
+                        color = "--modal"
+                        border = "--frontend"
                     />
 
                     {categorias.length > 0 && (
@@ -94,6 +96,8 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
                             valor={formulario.categoria}
                             setValor={(valor) => manejarCambio("categoria", valor)}
                             categorias={categorias}
+                            color = "--modal"
+                            border = "--frontend"
                         />
                     )}
 
@@ -103,6 +107,8 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
                         required
                         valor={formulario.capa}
                         setValor={(valor) => manejarCambio("capa", valor)}
+                        color = "--modal"
+                        border = "--frontend"
                     />
 
                     <Campo
@@ -111,6 +117,8 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
                         required
                         valor={formulario.enlace}
                         setValor={(valor) => manejarCambio("enlace", valor)}
+                        color = "--modal"
+                        border = "--frontend"
                     />
 
                     <Campo
@@ -119,12 +127,15 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
                         required
                         valor={formulario.descripcion}
                         setValor={(valor) => manejarCambio("descripcion", valor)}
+                        color = "--modal"
+                        border = "--frontend"
                     />
 
                     <div className={styles.btnGroup}>
-                        <button className={styles.botonHome} type="submit">Guardar</button>
+                        <button className={styles.botonHome} color = "--modal" type="submit">Guardar</button>
                         <button
                             className={styles.botonNuevoVideo}
+                            color = "--modal"
                             type="button"
                             onClick={handleClear}
                         >
