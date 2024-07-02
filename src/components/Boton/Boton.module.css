@@ -5,3 +5,9 @@ button{
     font-size: 20px;
     font-weight: 600;
 }
+
+@media screen and (width <=450px) {
+    button{
+        border-radius: 50px;
+    }
+}

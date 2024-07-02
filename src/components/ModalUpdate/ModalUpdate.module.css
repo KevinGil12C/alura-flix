@@ -7,12 +7,15 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     background: var(--modal);
-    padding:  0 20px;
+    padding: 0 20px;
     border-radius: 8px;
     height: auto;
+    max-height: 100dvh; /* Limita la altura máxima del modal al 80% del viewport height */
     width: 80%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--frontend)
+    border: 2px solid var(--frontend);
+    overflow-y: auto; /* Habilita el scroll vertical */
+    overflow-x: hidden; /* Opcional: Desactiva el scroll horizontal */
 }
 
 .overlay {
@@ -26,15 +29,22 @@
     align-items: center;
     justify-content: center;
 }
+.modal::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-thumb
+{
 
-.title{
+ background: none;
+
+ border-radius: 2px;
+
+}
+.title {
     color: var(--font-modal);
     font-size: 60px;
     text-transform: uppercase;
-
 }
 
-.cerrar{
+.cerrar {
     position: absolute;
     top: 34px;
     right: 34px;
@@ -42,31 +52,33 @@
     border-radius: 50%;
     padding: 5px;
 }
-.cerrar:hover{
+
+.cerrar:hover {
     cursor: pointer;
     border: 3px solid red;
     transition: var(--transition);
     border-radius: 25%;
 }
 
-form{
+form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.formContainer{
+.formContainer {
     width: calc(70%);
 }
 
-.btnGroup{
+.btnGroup {
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
 }
+
 .botonHome {
-    background-color: var(--negro); 
+    background-color: var(--negro);
     box-shadow: inset 0 0 10px var(--azul);
     border: 2px solid var(--azul);
     color: var(--azul);
@@ -75,9 +87,27 @@ form{
 }
 
 .botonNuevoVideo {
-    background-color: var(--negro); 
+    background-color: var(--negro);
     border: 2px solid var(--blanco);
     color: white;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 450px) {
+    .title{
+        font-size: 32px;
+        text-align: center;
+
+    }
+    .formContainer{
+        width: 90%;
+    }
+    .btnGroup{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
 }

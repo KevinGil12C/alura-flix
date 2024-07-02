@@ -1,4 +1,4 @@
-.cabecera{
+.cabecera {
     display: flex;
     flex-direction: row;
     background-color: var(--negro);
@@ -12,15 +12,18 @@
     z-index: 80px;
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 nav {
     display: flex;
-    gap: 10px; /* Espacio entre los botones */
+    gap: 10px;
+    /* Espacio entre los botones */
 }
+
 .botonHome {
-    background-color: var(--negro); 
+    background-color: var(--negro);
     box-shadow: inset 0 0 10px var(--azul);
     border: 2px solid var(--azul);
     color: var(--azul);
@@ -28,8 +31,93 @@ nav {
 }
 
 .botonNuevoVideo {
-    background-color: var(--negro); 
+    background-color: var(--negro);
     border: 2px solid var(--blanco);
     color: white;
     cursor: pointer;
+}
+
+.botonHome img,
+.botonNuevoVideo img {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+    .cabecera {
+        bottom: 0;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .botonHome img,
+    .botonNuevoVideo img {
+        display: block;
+    }
+
+    .botonHome {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        width: 155px;
+        height: 55px;
+    }
+
+    .botonNuevoVideo {
+        width: 155px;
+        height: 55px;
+        border: none;
+    }
+
+    .botonNuevoVideo p {
+        display: none;
+    }
+
+    .logoContainer {
+        display: none;
+    }
+}
+
+.botonNuevoVideo.active {
+    background-color: var(--negro);
+    box-shadow: inset 0 0 10px var(--azul);
+    border: 2px solid var(--azul);
+    color: var(--azul);
+    cursor: pointer;
+    width: 207px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+.botonHome.active {
+    background-color: var(--negro);
+    border: none;
+    box-shadow: none;
+    color: white;
+    cursor: pointer;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+.botonHome.active img{
+    width: 58px;
+    height: 58px;
+}
+
+.botonHome.active p {
+    display: none;
+}
+
+.botonNuevoVideo.active p {
+    display: block;
 }

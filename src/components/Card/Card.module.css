@@ -10,3 +10,15 @@
     height: 245px;
     border-radius: 15px;
 }
+
+@media screen and (max-width: 820px) {
+    .container{
+        width: 340px;
+        height: 222px;
+        padding: 0 4px;
+    }
+    .cardContainer img{
+        width: 340px;
+        height: 145px;
+    }
+}
