@@ -22,7 +22,7 @@ function ModalUpdate({ modalIsOpen, cerrarModal, video }) {
     });
 
     useEffect(() => {
-        fetch("http://localhost:3001/categoria")
+        fetch("https://alura-flix-api-five.vercel.app/categoria")
             .then((response) => response.json())
             .then((data) => {
                 setCategorias(data);

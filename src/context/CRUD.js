@@ -13,7 +13,7 @@ export function useVideosContext() {
     const navigate = useNavigate();
 
     const agregar = (nuevoVideo) => {
-        fetch("http://localhost:3001/videos", {
+        fetch("https://alura-flix-api-five.vercel.app/videos", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export function useVideosContext() {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3001/videos/${videoId}`, {
+                fetch(`https://alura-flix-api-five.vercel.app/videos/${videoId}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
@@ -112,7 +112,7 @@ export function useVideosContext() {
             });
 
             if (result.isConfirmed) {
-                await fetch(`http://localhost:3001/videos/${videoId}`, {
+                await fetch(`https://alura-flix-api-five.vercel.app/videos/${videoId}`, {
                     method: "DELETE"
                 });
                 const nuevosVideos = videos.filter(video => video.id !== videoId);

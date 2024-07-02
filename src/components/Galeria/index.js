@@ -13,7 +13,7 @@ function Galeria() {
     useEffect(() => {
         const fetchVideos = async () => {
             try {
-                const responseVideos = await fetch('http://localhost:3001/videos');
+                const responseVideos = await fetch('https://alura-flix-api-five.vercel.app/videos');
                 if (!responseVideos.ok) {
                     throw new Error('Error al cargar los videos');
                 }
@@ -26,7 +26,7 @@ function Galeria() {
 
         const fetchCategorias = async () => {
             try {
-                const responseCategorias = await fetch('http://localhost:3001/categoria');
+                const responseCategorias = await fetch('https://alura-flix-api-five.vercel.app/categoria');
                 if (!responseCategorias.ok) {
                     throw new Error('Error al cargar las categorías');
                 }
